@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/index.css">
+    <title>flybird</title>
+</head>
+<body>
+    <div id="wrapBg">
+        <!-- 标题界面 -->
+        <div id="headTitle">
+            <img src="img/bird0.png" alt="" id="headbird">
+        </div>
+        <!-- 开始按钮 -->
+        <button id="startbutton"></button>
+        <!-- 草地图片 -->
+        <div id="grossLand1"></div>
+        <div id="grossLand2"></div>
+    </div>
+    <script>
+        // 获取标题的dom结构
+        var jswrapBg = document.getElementById('wrapBg')
+        var jsheadTitle = document.getElementById('headTitle')
+        var jsheadBird = document.getElementById('headbird')
+        var Y = 5 //抖动幅度
+        var index = 0
+        var imgArr = ['img/bird0.png','img/bird1.png']
+        
+        var headWaveTimer = setInterval(headWave,200)
+        function headWave() {
+            // 设置dom结构的top值（实现上下抖动)
+            Y = Y * -1
+            jsheadTitle.style.top = jsheadTitle.offsetTop + Y +'PX'
+            // 实现翅膀煽动
+            jsheadBird.src = imgArr[index++]
+            if (index == 2){index = 0}
+        }
+        //平移草地
+        var X = -3
+        var jsgrassLand1 = document.getElementById('grossLand1')
+        var jsgrassLand2 = document.getElementById('grossLand2')
+        setInterval(landRun,30)
+        function landRun() {
+            if (jsgrassLand1.offsetLeft <= -343) 
+                {
+                    jsgrassLand1.style.left = "343px";
+                }
+                if (jsgrassLand2.offsetLeft <= -343) 
+                {
+                    jsgrassLand2.style.left = "343px";
+                }
+            jsgrassLand1.style.left = jsgrassLand1.offsetLeft + X +'PX'
+            jsgrassLand2.style.left = jsgrassLand2.offsetLeft + X +'PX'
+        }
+        var jsstartButton = document.getElementById('startbutton')
+        jsstartButton.onclick = function() {
+            jsheadTitle.style.display = 'none'
+            jsstartButton.style.display = 'none'
+            clearInterval(headWaveTimer)
+        }
+    </script>
+</body>
+</html>

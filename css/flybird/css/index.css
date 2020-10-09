@@ -1,0 +1,49 @@
+#wrapBg{
+    width: 343px;
+    height: 480px;
+    background-image: url(../img/bg.jpg);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%); 
+    overflow: hidden;
+}
+#headTitle{
+    width: 236px;
+    height: 77px;
+    background-image: url(../img/head.jpg);
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%); 
+    top: 100px;
+}
+#headbird{
+    float: right;
+    margin-top: 25px;
+}
+#startbutton{
+    margin: 0;
+    padding: 0;
+    width: 85px;
+    height: 29px;
+    background-image: url(../img/start.jpg);
+    position: absolute;
+    left: 129px;
+    top: 250px;
+}
+#grossLand1{
+    width: 343px;
+    height: 14px;
+    position: absolute;
+    top: 423.5px;
+    background-image: url(../img/banner.jpg);
+}
+#grossLand2{
+    width: 343px;
+    height: 14px;
+    position: absolute;
+    top: 423.5px;
+    left: 343px;
+    background-image: url(../img/banner.jpg);
+}
+
